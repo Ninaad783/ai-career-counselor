@@ -22,7 +22,7 @@ Provide a complete timeline guide using markdown h3 elements (###) for headers.
     const model = genAI.getGenerativeModel({ model: "gemini-2.5-flash" });
     const result = await model.generateContent({
       contents: [{ role: 'user', parts: [{ text: prompt }] }],
-      generationConfig: { maxOutputTokens: 1600, temperature: 0.5 }
+      generationConfig: { maxOutputTokens: 8192, temperature: 0.5 }
     });
     const roadmapText = await result.response.text();
     return res.status(200).json({ success: true, roadmap: roadmapText });
